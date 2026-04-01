@@ -247,6 +247,13 @@ function fetchWishesFromSheet(isRefresh = false) {
     }, 10000);
 }
 
+// Format date to dd/MM/yyyy in UTC+7
+function formatDateVN(dateStr) {
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) return dateStr;
+    return date.toLocaleDateString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', day: '2-digit', month: '2-digit', year: 'numeric' });
+}
+
 // Display wishes from Google Sheets
 function displaySheetWishes(wishes) {
     const wishesList = document.getElementById('wishesList');
@@ -263,6 +270,7 @@ function displaySheetWishes(wishes) {
     
     reversedWishes.forEach(wish => {
         const firstLetter = wish.name.charAt(0).toUpperCase();
+        const formattedDate = formatDateVN(wish.date);
         const wishItem = document.createElement('div');
         wishItem.className = 'wish-item';
         wishItem.innerHTML = `
@@ -270,7 +278,7 @@ function displaySheetWishes(wishes) {
                 <div class="wish-avatar">${escapeHtml(firstLetter)}</div>
                 <div class="wish-meta">
                     <span class="wish-author-name">${escapeHtml(wish.name)}</span>
-                    <span class="wish-date">${escapeHtml(wish.date)}</span>
+                    <span class="wish-date">${escapeHtml(formattedDate)}</span>
                 </div>
             </div>
             <p class="wish-text">${escapeHtml(wish.message)}</p>
@@ -281,7 +289,7 @@ function displaySheetWishes(wishes) {
         localWishes.push({
             name: wish.name,
             message: wish.message,
-            date: wish.date
+            date: formattedDate
         });
     });
     
