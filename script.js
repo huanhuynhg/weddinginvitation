@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Google Apps Script Web App URL - Replace with your deployed script URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyc-Sov7-6iTZbuy7VaqyWZhnpboWhppS1zcN2nwadgcTUlb4446bQhSIDBvrsaE1o/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfPcsLV231QhNgV4zI4iMS0qZeE3xTAo_rA5kULIxYn7_PEfkgx7bRoAHpWJ27zq4b/exec';
 
 // Lightbox Functions
 function closeLightbox(event) {
