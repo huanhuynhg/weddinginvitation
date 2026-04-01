@@ -109,7 +109,7 @@ function sendWish() {
     }
     
     const senderName = nameValue.trim() || 'Khách mờii';
-    const currentDate = new Date().toLocaleDateString('vi-VN');
+    const currentDate = new Date().toLocaleDateString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
     const firstLetter = senderName.charAt(0).toUpperCase();
     
     // Clear form immediately for better UX
