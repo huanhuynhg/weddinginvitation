@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             distance = currentTargetDate - now;
             
             // Update the display text to show second event
-            const countdownTitle = document.querySelector('.countdown-title');
+            const countdownTitle = document.querySelector('.countdown-label');
             if (countdownTitle) {
                 countdownTitle.textContent = 'Đếm ngược đến ngày Thành Hôn';
             }
